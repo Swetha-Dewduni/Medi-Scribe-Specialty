@@ -1,0 +1,80 @@
+.consultation { min-height: 100vh; display: flex; flex-direction: column; }
+
+.consult-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 40px; background: var(--surface);
+  border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50;
+}
+.consult-title { display: flex; align-items: center; gap: 12px; }
+.consult-sp-badge {
+  padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600;
+}
+.consult-doctor { font-size: 14px; color: var(--text-2); }
+.consult-time { font-size: 13px; color: var(--text-3); }
+
+.consult-main {
+  flex: 1; max-width: 900px; margin: 0 auto; padding: 36px 32px;
+  width: 100%; display: flex; flex-direction: column; gap: 24px;
+}
+
+/* ── Record Panel ── */
+.record-panel { padding: 28px 32px; display: flex; flex-direction: column; gap: 20px; }
+
+.record-status { display: flex; align-items: center; gap: 16px; }
+.record-indicator {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--border-strong); flex-shrink: 0;
+  transition: background 0.3s;
+}
+.record-indicator.recording {
+  background: var(--red);
+  animation: recordPulse 1.2s ease-in-out infinite;
+}
+.record-indicator.stopped { background: var(--green); }
+.record-indicator.processing { background: var(--accent); animation: pulse 1s ease-in-out infinite; }
+
+.record-phase-label { font-size: 16px; font-weight: 600; }
+.record-timer { font-family: 'DM Serif Display', serif; font-size: 28px; color: var(--red); margin-top: 2px; }
+
+.record-controls { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.processing-indicator {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--accent); font-size: 15px; font-weight: 500;
+}
+
+.demo-banner {
+  padding: 12px 16px; background: var(--amber-light);
+  border: 1px solid var(--amber); border-radius: var(--radius-sm);
+  font-size: 13px; color: var(--amber);
+}
+.error-banner {
+  padding: 12px 16px; background: var(--red-light);
+  border: 1px solid var(--red); border-radius: var(--radius-sm);
+  font-size: 13px; color: var(--red);
+}
+
+/* ── Transcript ── */
+.transcript-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+}
+.transcript-header h3 { font-size: 16px; font-weight: 600; }
+.transcript-actions { display: flex; align-items: center; gap: 12px; }
+.char-count { font-size: 12px; color: var(--text-3); }
+
+.transcript-area {
+  width: 100%; height: 360px; resize: vertical;
+  font-size: 14px; line-height: 1.7; font-family: 'DM Sans', sans-serif;
+  border: 1.5px solid var(--border); border-radius: var(--radius);
+  padding: 20px; background: var(--surface); color: var(--text);
+  outline: none; transition: border-color 0.15s;
+}
+.transcript-area:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+.transcript-area[readonly] { background: var(--surface-2); cursor: default; }
+
+/* ── Tips ── */
+.tips-section { padding: 20px 24px; }
+.tips-section h4 { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+.tips-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.tips-list li { font-size: 13px; color: var(--text-2); padding-left: 16px; position: relative; }
+.tips-list li::before { content: '–'; position: absolute; left: 0; color: var(--text-3); }
